@@ -28,3 +28,10 @@ The project also includes a robust testing suite to ensure code quality and reli
 - Vite
 - ESLint
 - Prettier
+
+## Testing
+- For the server use Vitest.
+- For the client use Vitest and React Testing Library.
+- Put test files in the same folder as the file they are testing.
+- Name test files with a .test.ts or .test.tsx suffix.
+- Use global imports. Do not import describe, it, test or expect into test files.
