@@ -6,22 +6,27 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-export default defineConfig(
-  [
-    globalIgnores(['dist']),
-    {
-      files: ['**/*.{ts,tsx}'],
-      extends: [
-        js.configs.recommended,
-        tseslint.configs.recommended,
-        reactHooks.configs['recommended-latest'],
-        reactRefresh.configs.vite,
-      ],
-      languageOptions: {
-        ecmaVersion: 2020,
-        globals: globals.browser,
-      },
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs['recommended-latest'],
+      reactRefresh.configs.vite,
+      eslintConfigPrettier,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
-  ],
-  eslintConfigPrettier
-);
+    rules: {
+      'no-unused-vars': ['off'],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+    },
+  },
+]);
