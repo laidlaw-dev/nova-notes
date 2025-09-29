@@ -1,0 +1,23 @@
+{
+  "name": "nova-notes",
+  "version": "1.0.0",
+  "description": "Note taking app",
+  "keywords": [
+    "Notes"
+  ],
+  "homepage": "https://github.com/laidlaw-dev/nova-notes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laidlaw-dev/nova-notes.git"
+  },
+  "license": "ISC",
+  "author": "laidlaw_dev",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
