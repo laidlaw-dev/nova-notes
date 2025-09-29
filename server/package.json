@@ -1,0 +1,30 @@
+{
+  "name": "nova-notes-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "tsc && node ./dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/express": "^5.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
