@@ -14,4 +14,17 @@ The project also includes a robust testing suite to ensure code quality and reli
 
 - client/: Contains the frontend code for the Nova Notes web application, built with React and TypeScript.
 - server/: Contains the backend code, including API endpoints and database interactions, built with Node.js, Express and TypeScript.
--
+
+## Server Technologies
+- TypeScript
+- Node.js
+- Express
+- ESLint
+- Prettier
+
+## Client Technologies
+- TypeScript
+- React 19
+- Vite
+- ESLint
+- Prettier
