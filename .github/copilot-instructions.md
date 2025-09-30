@@ -22,6 +22,15 @@ The project also includes a robust testing suite to ensure code quality and reli
 - ESLint
 - Prettier
 
+## Server Structure
+- src/server.ts: Entry point for the server application.
+- src/app.ts: Sets up the Express application, middleware, and routes.
+- src/routes/: Contains route definitions for the API endpoints.
+- src/controllers/: Contains controller functions that handle requests and responses.
+- src/services/: Contains business logic and interactions with the database.
+- src/middlewares/: Contains custom middleware functions for request processing.
+- src/types/: Contains TypeScript type definitions and interfaces.
+
 ## Client Technologies
 - TypeScript
 - React 19
@@ -47,6 +56,10 @@ The project also includes a robust testing suite to ensure code quality and reli
 - Use interfaces and types for type definitions.
 - Keep functions small and focused on a single task. Functions should not be more than 20 lines long.
 - Use React functional components and hooks.
+- Avoid using any type. Use unknown if the type is not known.
+- Use ESLint and Prettier to enforce coding standards. Do not disable ESLint rules unless absolutely necessary. If a rule is disabled, add a comment explaining why.
+- Write code that is easy to read and understand. Prioritize readability over cleverness or brevity.
+- Use consistent indentation and spacing.
 
 ## Testing
 - For the server use Vitest.
@@ -58,6 +71,7 @@ The project also includes a robust testing suite to ensure code quality and reli
 - Mock react-i18next t function in client tests.
 - Use fake timers when testing code that uses setTimeout or setInterval or uses the current date time.
 - Test the behavior of functions and components. Do not test implementation details or component appearance.
+- Use node-mocks-http for testing Express request and response objects.
 
 ## Translations
 - Use useTranslation hook from react-i18next to get t function.
