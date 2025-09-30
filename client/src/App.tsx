@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
-import { checkHealth } from '@/api/health';
+import { useTranslation } from 'react-i18next';
+import { DateTime } from 'luxon';
 function App() {
-  const [health, setHealth] = useState(null);
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    const fetchHealth = async () => {
-      const health = await checkHealth();
-      console.log('Health check:', health);
-      setHealth(health);
-    };
-
-    fetchHealth();
-  }, []);
-
-  return <div>{health ? 'Healthy' : 'Unhealthy'}</div>;
+  return (
+    <div>
+      <div>{t('application.name')}</div>
+      <div>{t('application.copyright', { year: DateTime.now().year })}</div>
+    </div>
+  );
 }
 
 export default App;
