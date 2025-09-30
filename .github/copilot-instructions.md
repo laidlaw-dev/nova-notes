@@ -57,6 +57,7 @@ The project also includes a robust testing suite to ensure code quality and reli
 - Use describe blocks to group related tests. Name describe blocks with the name of the function or component being tested.
 - Mock react-i18next t function in client tests.
 - Use fake timers when testing code that uses setTimeout or setInterval or uses the current date time.
+- Test the behavior of functions and components. Do not test implementation details or component appearance.
 
 ## Translations
 - Use useTranslation hook from react-i18next to get t function.
@@ -73,3 +74,13 @@ The project also includes a robust testing suite to ensure code quality and reli
 
 ## Date and Time
 - Use Luxon for date and time handling.
+
+## CSS
+- Use Tailwind CSS for styling.
+- Use Tailwind version 4. There is no tailwind.config.js file in the project.
+- Follow Tailwind CSS best practices.
+- Use semantic HTML elements.
+- Use className attribute for adding Tailwind classes to React components.
+- Use utility classes for styling.
+- Avoid custom CSS unless absolutely necessary. If custom CSS is necessary, use it sparingly and document its purpose.
+- For color classes use semantic names, e.g. bg-primary, text-on-secondary, defined in client/src/index.css.
