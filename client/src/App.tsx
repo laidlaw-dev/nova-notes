@@ -1,3 +1,23 @@
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { ProtectedLayout } from './pages/ProtectedLayout';
+import { HomePage } from './pages/HomePage';
+import SignedOut from './pages/SignOutPage';
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProtectedLayout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+        <Route path="/signout" element={<SignedOut />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+/*
+
 import { useAuth } from 'react-oidc-context';
 
 const App = () => {
@@ -39,5 +59,5 @@ const App = () => {
     </div>
   );
 };
-
+*/
 export default App;

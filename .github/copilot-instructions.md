@@ -66,12 +66,20 @@ The project also includes a robust testing suite to ensure code quality and reli
 - For the client use Vitest and React Testing Library.
 - Put test files in the same folder as the file they are testing.
 - Name test files with a .test.ts or .test.tsx suffix.
-- Use global imports. Do not import describe, it, test or expect into test files.
+- Use global imports. Do not import describe, it, test, expect or vi into test files.
 - Use describe blocks to group related tests. Name describe blocks with the name of the function or component being tested.
-- Mock react-i18next t function in client tests.
+- Mock react-i18next t function in client tests when useTranslation is used by the component under test.
 - Use fake timers when testing code that uses setTimeout or setInterval or uses the current date time.
 - Test the behavior of functions and components. Do not test implementation details or component appearance.
 - Use node-mocks-http for testing Express request and response objects.
+- Mock functions should named with the name of the function being mocked prefixed by mock_, e.g. mock_getUserById.
+- When calling a mock function, call it through a variable named with the name of the function being mocked prefixed by mock_, e.g. mock_getUserById(). Call it using a function. E.g.
+```
+const mock_useAuth = vi.fn();
+vi.mock('react-oidc-context', () => ({
+  useAuth: () => mock_useAuth(),
+}));
+```
 
 ## Translations
 - Use useTranslation hook from react-i18next to get t function.

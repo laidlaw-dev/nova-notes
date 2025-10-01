@@ -4,19 +4,23 @@ import './index.css';
 import './i18n';
 import App from './App.tsx';
 import { AuthProvider } from 'react-oidc-context';
+import { CognitoParameters } from './setup/cognito-parameters.ts';
+import { AuthenticationCodeCleaner } from './components/utilities/AuthenticationCodeCleaner.tsx';
 
 const cognitoAuthConfig = {
-  authority:
-    'https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_crFJnnVJC',
-  client_id: '1ifvfin3kr0hifc354juokfvjt',
-  redirect_uri: 'http://localhost:5173',
-  response_type: 'code',
-  scope: 'phone openid email',
+  authority: CognitoParameters.authority,
+  client_id: CognitoParameters.client_id,
+  redirect_uri: CognitoParameters.redirect_uri,
+  response_type: CognitoParameters.response_type,
+  scope: CognitoParameters.scope,
 };
+
+console.log('Cognito Auth Config:', CognitoParameters);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
+      <AuthenticationCodeCleaner />
       <App />
     </AuthProvider>
   </StrictMode>
